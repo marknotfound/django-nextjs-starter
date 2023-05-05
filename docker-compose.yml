@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      target: backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/app
+    command: uvicorn backend.asgi:application --reload --host 0.0.0.0
+
+  celery:
+    build:
+      context: ./backend
+      target: celery
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+
+  postgres:
+    image: postgres:15.2-alpine
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=backend
+
+  redis:
+    image: redis:7.0-alpine
