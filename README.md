@@ -21,4 +21,7 @@ cp client/.env.dist client/.env.local
 ## Docker
 `docker-compose.yml` defines all of the backend services. You may comment out or remove services which aren't needed. It is preconfigured with Postgres, Redis, and Celery which is a fairly standard Django stack.
 
-The `backend/Dockerfile` is used for the `backend` and `celery` services. It is, in my opinion, suitable for production use.
+The `backend/Dockerfile` is used for the `backend` and `celery` services. It is, in my opinion, suitable for production use, but open a pull request if something looks off.
+
+## Deploying
+This repo is generally unopinionated on deploying. For Next.js, I like Vercel. For Django, I like Railway. It is up to you how you want to deploy. The backend uses `DATABASE_URL` and `REDIS_URL` environment variables which are commonly used in PaaS offerings.
