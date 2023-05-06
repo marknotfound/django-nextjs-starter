@@ -18,6 +18,9 @@ source .env
 python manage.py generate_secret_key
 ```
 
+## User Model
+There is an empty custom user model in `backend/models.py`.
+
 ## Celery
 Celery is configured to read settings from the Django settings module. It will read settings prefixed with `CELERY_`. There is a sample Celery task in `backend/tasks.py`.
 
