@@ -27,7 +27,12 @@ export default function Home() {
           </a>
         </div>
       </div>
-
+      <p>
+        Django/API Base URL:&nbsp;
+        <a href={process.env.NEXT_PUBLIC_API_URL} target='_blank'>
+          <code className={styles.code}>{process.env.NEXT_PUBLIC_API_URL}</code>
+        </a>
+      </p>
       <div className={styles.center}>
         <Image
           className={styles.logo}

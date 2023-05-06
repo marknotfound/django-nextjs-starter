@@ -10,7 +10,8 @@ services:
       - 8000:8000
     volumes:
       - ./backend:/app
-    command: uvicorn backend.asgi:application --reload --host 0.0.0.0
+    restart: on-failure
+    command: sh run_local.sh
 
   celery:
     build:

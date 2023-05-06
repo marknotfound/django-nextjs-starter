@@ -6,9 +6,11 @@ ENV PYTHONUNBUFFERED=1
 
 RUN mkdir /app
 WORKDIR /app
-COPY . /app
+COPY requirements.txt /app/requirements.txt
 RUN python -m pip install --upgrade pip
 RUN python -m pip install -r requirements.txt
+
+COPY . /app
 
 # This command should be suitable for production use.
 # The docker-compose.yml file overrides this command and uses uvicorn directly.
