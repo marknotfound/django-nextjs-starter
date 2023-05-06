@@ -24,4 +24,4 @@ cp client/.env.dist client/.env.local
 The `backend/Dockerfile` is used for the `backend` and `celery` services. It is, in my opinion, suitable for production use, but open a pull request if something looks off.
 
 ## Deploying
-This repo is generally unopinionated on deploying. I unofficially recommend Vercel for Next.js and Railway for Django. Both support monorepos such as this by allowing you to specify a root directory. It is up to you how you want to deploy. The backend uses `DATABASE_URL` and `REDIS_URL` environment variables which are commonly used in PaaS offerings.
+This repo is generally unopinionated on deploying. I unofficially recommend [Vercel](https://vercel.com/) for Next.js and [Railway](http://railway.app/) for Django. Both support monorepos such as this by allowing you to specify a root directory. Ultimately it is up to you how you want to deploy. The backend uses `DATABASE_URL` and `REDIS_URL` environment variables which are commonly used in PaaS offerings.
